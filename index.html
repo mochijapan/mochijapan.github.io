@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mochi Japan | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    header, section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .profile-card {
+      background: #1a1a1a;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 0 12px rgba(0,0,0,0.6);
+      flex-wrap: wrap;
+    }
+    .profile-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(255,105,180,0.4);
+    }
+    .profile-img {
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      background: url("https://avatars.githubusercontent.com/u/124114223?s=400&u=e3c2463e5236b87a41f3d89a359fdec35692d05f&v=4") center/cover no-repeat;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+      transition: box-shadow 0.3s ease;
+      flex-shrink: 0;
+    }
+    .project-label {
+      display: block;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 8px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      pointer-events: none;
+    }
+    .profile-card:hover .profile-img {
+      box-shadow: 0 0 40px rgba(255, 182, 193, 0.9);
+    }
+    .profile-text {
+      text-align: left;
+      max-width: 600px;
+    }
+    .profile-text h1 span {
+      background: linear-gradient(90deg, #ff69b4, #ffc0cb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    .profile-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .profile-text h1 span {
+      color: #ff69b4;
+    }
+    .profile-text p {
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+    a.button {
+      display: inline-block;
+      background: #ff69b4;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.3s;
+      margin-bottom: 15px;
+    }
+    a.button:hover {
+      background: #e0559f;
+    }
+    .social-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .social-buttons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e0e0e0;
+      color: #000;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+    .social-buttons a img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+    .social-buttons a:hover {
+      transform: scale(1.05);
+      background: #bbb;
+    }
+    #projects {
+      background: #111;
+      padding: 60px 20px;
+    }
+    #projects h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+    .projects-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+    .project-card {
+      background: #1a1a1a;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 12px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .project-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(255,105,180,0.4);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-content {
+      padding: 20px;
+      flex: 1;
+    }
+    .project-content h3 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+    .project-content p {
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .project-content a {
+      display: block;
+      text-align: center;
+      background: #d3d3d3;
+      color: #000;
+      padding: 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+    .project-content a:hover {
+      background: #bbb;
+      transform: scale(1.05);
+    }
+    #reviews {
+      background: #0f0f10;
+      padding: 60px 20px;
+    }
+    #reviews h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #ffd6eb;
+    }
+    .reviews-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
+      padding: 0 10px;
+    }
+    .review-card {
+      background: #171717;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .review-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 25px rgba(255,105,180,0.4);
+    }
+    .reviewer-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .reviewer-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.3));
+      display: inline-block;
+    }
+    .reviewer-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .reviewer-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .reviewer-username {
+      font-weight: bold;
+      font-size: 1rem;
+      color: #fff;
+    }
+    .reviewer-discriminator {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 2px;
+      display: block;
+    }
+    .review-quote {
+      color: #d1d1d1;
+      font-style: italic;
+      margin: 6px 4px 0 4px;
+      line-height: 1.45;
+    }
+    .review-stars {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 6px;
+    }
+    .star {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+    }
+    @media (min-width: 720px) {
+      .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .project-card img {
+        height: 160px;
+      }
+    }
+    @media (max-width: 520px) {
+      .profile-img { width: 220px; height: 220px; }
+      .profile-text h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="profile-card">
+      <div class="profile-img"></div>
+      <div class="profile-text">
+        <h1>Hii, I'm <span>Mochi Japan</span></h1>
+        <p>I'm an experienced coder and modeler who loves creating Minecraft content.</p>
+        <a href="#projects" class="button">Check out my projects!</a>
+        <div class="social-buttons">
+          <a href="https://discord.com/users/1301027568757112832" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord"> Contact Me
+          </a>
+          <a href="https://github.com/mochijapan" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"> GitHub
+          </a>
+          <a href="https://www.youtube.com/@MochiJapans" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"> YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://i.ytimg.com/vi/OuncTUyuotI/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAnvIN6BTZX2Uu3lCFSxA36XocQsQ" alt="Project Thumbnail" />
+        <div class="project-content">
+          <h3>Blosxura</h3>
+          <p>A community owned by me with pvp related projects with so much more!</p>
+          <div class="project-label">Server</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://sweetjapan.dev/commissionworkpng.png" alt="Project Thumbnail" />
+        <div class="project-content">
+          <h3>Commission Work</h3>
+          <p>Here are some commission work that I do.. PS: Your going to love it!</p>
+          <div class="project-label">Commission Work</div>
+          <a href="https://mochijapan.github.io/commissions.html" target="_blank">View</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="reviews">
+    <h2>Reviews</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="reviewer-row">
+          <div class="reviewer-avatar">
+            <img src="https://cdn.discordapp.com/avatars/1384633926294962226/1c478205c8468708910e5784199600ba?size=1024" alt="Discord avatar">
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-username">WertWert3612<span class="reviewer-discriminator">DrinumistSMP | Owner</span></div>
+          </div>
+        </div>
+        <div class="review-quote">"I highly recommend Mochi Japan, he’s been amazing to work with. From the start he understood my project and what I wanted, was happy to make revisions, and always met deadlines. His models are hard to beat, with the fantastic quality in both design and texturing."</div>
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffd166" d="M12 .587l3.087 6.26L22 8.27l-5 4.873L18.174 22 12 18.897 5.826 22 7 13.143 2 8.27l6.913-1.423z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffd166" d="M12 .587l3.087 6.26L22 8.27l-5 4.873L18.174 22 12 18.897 5.826 22 7 13.143 2 8.27l6.913-1.423z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffd166" d="M12 .587l3.087 6.26L22 8.27l-5 4.873L18.174 22 12 18.897 5.826 22 7 13.143 2 8.27l6.913-1.423z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffd166" d="M12 .587l3.087 6.26L22 8.27l-5 4.873L18.174 22 12 18.897 5.826 22 7 13.143 2 8.27l6.913-1.423z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffd166" d="M12 .587l3.087 6.26L22 8.27l-5 4.873L18.174 22 12 18.897 5.826 22 7 13.143 2 8.27l6.913-1.423z"/></svg>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="reviewer-row">
+          <div class="reviewer-avatar">
+            <img src="https://cdn.discordapp.com/avatars/1012906941556723722/7793d0275a6c92dd03bd7b6476272d7f?size=1024" alt="Discord avatar">
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-username">Darkoakboat2121<span class="reviewer-discriminator">Darkoak Community | Owner</span></div>
+          </div>
+        </div>
+        <div class="review-quote">Mochi Japan’s Minecraft crates are well-balanced, exciting, and packed with great variety. Each opening feels rewarding, delivering anticipation and lasting satisfaction without ever becoming repetitive."</div>
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffd166" d="M12 .587l3.087 6.26L22 8.27l-5 4.873L18.174 22 12 18.897 5.826 22 7 13.143 2 8.27l6.913-1.423z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffd166" d="M12 .587l3.087 6.26L22 8.27l-5 4.873L18.174 22 12 18.897 5.826 22 7 13.143 2 8.27l6.913-1.423z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffd166" d="M12 .587l3.087 6.26L22 8.27l-5 4.873L18.174 22 12 18.897 5.826 22 7 13.143 2 8.27l6.913-1.423z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffd166" d="M12 .587l3.087 6.26L22 8.27l-5 4.873L18.174 22 12 18.897 5.826 22 7 13.143 2 8.27l6.913-1.423z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffd166" d="M12 .587l3.087 6.26L22 8.27l-5 4.873L18.174 22 12 18.897 5.826 22 7 13.143 2 8.27l6.913-1.423z"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+  </html>
+  
