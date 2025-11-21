@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commission Work | Mochi Japan</title>
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0e0e11, #1b1b1f);
+      color: #f3f3f3;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1a1a1d;
+      border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #ff6bb5, #ffc0cb);
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(255, 107, 181, 0.6);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #e65fa3, #ff9fcf);
+    }
+
+    /* Wrapper */
+    .selection-wrap {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 35px;
+      text-align: center;
+    }
+
+    /* Title */
+    .selection-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #ff6bb5, #ff9fcf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+    }
+
+    /* Back button */
+    .back-btn {
+      background: #ff6bb5;
+      color: #fff;
+      padding: 12px 26px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: 0.25s ease;
+      box-shadow: 0 4px 12px rgba(255, 107, 181, 0.3);
+    }
+    .back-btn:hover {
+      background: #e65fa3;
+      box-shadow: 0 6px 18px rgba(255, 107, 181, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Grid */
+    .selection-grid {
+      display: grid;
+      gap: 25px;
+      grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
+      width: 100%;
+    }
+
+    /* Card */
+    .selection-card {
+      background: #1e1e22;
+      border-radius: 16px;
+      padding: 20px;
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .selection-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(255, 107, 181, 0.25);
+    }
+
+    /* Card Title */
+    .selection-text {
+      font-weight: 700;
+      font-size: 1.3rem;
+      background: linear-gradient(90deg, #ff6bb5, #ffc0cb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Card Image */
+    .selection-card img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 155, 200, 0.35);
+      transition: transform 0.3s ease;
+    }
+    .selection-card:hover img {
+      transform: scale(1.04);
+    }
+
+    @media (max-width: 640px) {
+      .selection-grid {
+        grid-template-columns: 1fr; /* On mobile, 1 column */
+      }
+      .selection-title { font-size: 2rem; }
+      .selection-card { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="selection-wrap">
+    <h2 class="selection-title">Choose Your Category</h2>
+    <a href="https://mochijapan.github.io" class="back-btn">← Go Back</a>
+
+    <div class="selection-grid">
+      <!-- Models -->
+      <a href="https://sweetjapan.dev/models" class="selection-card">
+        <img src="https://sweetjapan.dev/earthsmp.png" alt="Models Example">
+        <div class="selection-text">Models</div>
+      </a>
+
+      <!-- Textures -->
+      <a href="https://sweetjapan.dev/textures" class="selection-card">
+        <img src="https://sweetjapan.dev/sakuralogobackground2.jpg" alt="Textures Example">
+        <div class="selection-text">Textures</div>
+      </a>
+
+      <!-- Websites -->
+      <a href="https://sweetjapan.dev/websites" class="selection-card">
+        <img src="https://sweetjapan.dev/websites.png" alt="Websites Example">
+        <div class="selection-text">Websites</div>
+      </a>
+            <!-- Scripting -->
+        <a href="https://sweetjapan.dev/scripts" class="selection-card">
+        <img src="https://sweetjapan.dev/scripting.png" alt="Websites Example">
+        <div class="selection-text">Scripting</div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
