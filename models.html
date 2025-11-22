@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mochi Japan | Models</title>
+  <style>
+    /* Base */
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+      background: #0a0a0a;
+      color: #f3f3f3;
+      line-height: 1.6;
+      text-align: center;
+      overflow-y: scroll;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 40px 0 10px;
+      background: linear-gradient(90deg, #ff69b4, #ffc0cb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      color: #aaa;
+      margin-bottom: 25px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: #ff69b4;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.25s ease;
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+    }
+    .back-btn:hover {
+      background: #e0559f;
+      box-shadow: 0 6px 18px rgba(255, 105, 180, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Gallery */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1280px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+    }
+
+    .gallery-item {
+      background: #161616;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(255, 105, 180, 0.25);
+    }
+
+    .gallery-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+    .gallery-item:hover .gallery-image {
+      transform: scale(1.05);
+    }
+
+    .gallery-info {
+      padding: 14px;
+      text-align: left;
+    }
+
+    .gallery-category {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #ffb6d1;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .gallery-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;   /* clamp to 2 lines */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Pink Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0a0a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #ff69b4, #ffc0cb);
+      border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #e0559f, #ff9fba);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Models</h1>
+    <p class="subtitle">This doesn't include everything...</p>
+    <a href="https://mochijapan.github.io/" class="back-btn">← Go Back</a>
+  </header>
+
+  <div class="gallery-container">
+    <!-- Example item -->
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/oneblock.png" target="_blank">
+        <img src="https://sweetjapan.dev/oneblock.png" alt="Oneblock NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Minecity</div>
+          <div class="gallery-title">Oneblock NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/earthsmp1.png" target="_blank">
+        <img src="https://sweetjapan.dev/earthsmp1.png" alt="Earth SMP NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Minecity</div>
+          <div class="gallery-title">Earth SMP NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/lifesteal1.png" target="_blank">
+        <img src="https://sweetjapan.dev/lifesteal1.png" alt="Lifesteal NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Minecity</div>
+          <div class="gallery-title">Lifesteal NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/growafarm.png" target="_blank">
+        <img src="https://sweetjapan.dev/growafarm.png" alt="Grow a farm NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Mineville Concept</div>
+          <div class="gallery-title">Grow a farm NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/earthsmp.png" target="_blank">
+        <img src="https://sweetjapan.dev/earthsmp.png" alt="Earth SMP" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Mineville Concept</div>
+          <div class="gallery-title">Earth SMP</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/duels.png" target="_blank">
+        <img src="https://sweetjapan.dev/duels.png" alt="Duels NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Sakura</div>
+          <div class="gallery-title">Duels NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/sakuraspectate.png" target="_blank">
+        <img src="https://sweetjapan.dev/sakuraspectate.png" alt="Spectate NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Sakura</div>
+          <div class="gallery-title">Spectate NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/sakuraothers.png" target="_blank">
+        <img src="https://sweetjapan.dev/sakuraothers.png" alt="Other NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Sakura</div>
+          <div class="gallery-title">Other NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/FFANpc.png" target="_blank">
+        <img src="https://sweetjapan.dev/FFANpc.png" alt="FFA NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Sakura</div>
+          <div class="gallery-title">FFA NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/merchantnpc.png" target="_blank">
+        <img src="https://sweetjapan.dev/merchantnpc.png" alt="Merchant NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Minecity</div>
+          <div class="gallery-title">Merchant NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/Screenshot 2025-08-26 064818.png" target="_blank">
+        <img src="https://sweetjapan.dev/Screenshot 2025-08-26 064818.png" alt="Emperor NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Minecity</div>
+          <div class="gallery-title">Emperor NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/Screenshot 2025-08-23 213555.png" target="_blank">
+        <img src="https://sweetjapan.dev/Screenshot 2025-08-23 213555.png" alt="King NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Minecity</div>
+          <div class="gallery-title">King NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/Screenshot 2025-08-23 162622.png" target="_blank">
+        <img src="https://sweetjapan.dev/Screenshot 2025-08-23 162622.png" alt="Prince NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Minecity</div>
+          <div class="gallery-title">Prince NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/Screenshot 2025-08-24 165623.png" target="_blank">
+        <img src="https://sweetjapan.dev/Screenshot 2025-08-24 165623.png" alt="Knight NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Minecity</div>
+          <div class="gallery-title">Knight NPC</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/beerealm.png" target="_blank">
+        <img src="https://sweetjapan.dev/beerealm.png" alt="Bee Realm" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Oneblocky Concept</div>
+          <div class="gallery-title">Bee Realm</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/slh.png" target="_blank">
+        <img src="https://sweetjapan.dev/slh.png" alt="Hub NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Oniion</div>
+          <div class="gallery-title">Hub NPC</div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/discordnpc.png" target="_blank">
+        <img src="https://sweetjapan.dev/discordnpc.png" alt="Hub NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Bedrock Portal / Minecity</div>
+          <div class="gallery-title">Discord NPC</div>
+        </div>
+      </a>
+    </div>
+        
+    <div class="gallery-item">
+      <a href="https://sweetjapan.dev/portal1.png" target="_blank">
+        <img src="https://sweetjapan.dev/portal1.png" alt="Grow a farm NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Bedrock Portal</div>
+          <div class="gallery-title">Private Servers NPC</div>
+        </div>
+      </a>
+    </div>
+    
+        <div class="gallery-item">
+      <a href="https://sweetjapan.dev/portal2.png" target="_blank">
+        <img src="https://sweetjapan.dev/portal2.png" alt="Grow a farm NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Bedrock Portal</div>
+          <div class="gallery-title">Featured Servers NPC</div>
+        </div>
+      </a>
+    </div>
+    
+        <div class="gallery-item">
+      <a href="https://sweetjapan.dev/wumpus.png" target="_blank">
+        <img src="https://sweetjapan.dev/wumpus.png" alt="Grow a farm NPC" class="gallery-image" />
+        <div class="gallery-info">
+          <div class="gallery-category">Services Hub</div>
+          <div class="gallery-title">Wumpus</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+            
